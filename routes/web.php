@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\IndexController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +29,8 @@ Route::middleware([
     })->name('dashboard');
 });
 
-Route::get("/",[AdminController::class,"index"]);
+Route::get("/home",[AdminController::class,"index"])->name("admin");
 
 Route::get("/redirects",[AdminController::class,"redirect"]);
+
+Route::get("/",[IndexController::class,"port"]);
