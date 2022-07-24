@@ -81,7 +81,7 @@ hr {
 
 /* START HOME */
 .templatemo-home {
-  background: url('../images/home-bg.jpg');
+ 
   background-size: cover;
   background-attachment: fixed;
   background-position: center center;
@@ -324,7 +324,7 @@ hr {
 
 /* START ABOUT */
 .tm-about {
-  background: url('../images/about-bg.jpg');
+ 
   background-size: cover;
   background-attachment: fixed;
   background-position: center center;

@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <title>SB Admin 2 - Dashboard</title>
 
     <!-- Custom fonts for this template-->
@@ -33,7 +33,68 @@
 <div id="content">
 @include("admin.header")
 
-@include("admin.content")
+<div class="container" style="position:absolute;top:100px">
+    <div class="row">
+    <div class="col-4">
+
+<form action="{{route('StoreAbout')}}" method="post" enctype="multipart/form-data">
+    @csrf
+
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Vezife</label>
+    <input type="text" name="position" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Tesvir</label>
+    <input type="file" name="image" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Haqqinda</label>
+    <input type="text" name="about" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+  </div>
+  <button type="submit" class="btn btn-primary text-danger">Gonder</button>
+
+
+
+
+</form>
+</div>
+
+<div class="col-4">
+<table class="table">
+  <thead>
+    <tr>
+     
+     
+      <th scope="col">Vezife</th>
+      <th scope="col">Haqqinda</th>
+      <th scope="col">Tesvir</th>
+      <th scope="col">Duzelis et</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>{{$data->position}}</th>
+      <td>{{$data->about}}</td>
+      <td>{{$data->image}}</td>
+      
+      <td><a href="{{'EditAbout/'.$data['id']}}" class="btn btn-info"><i class="fa-solid fa-pen-to-square"></i></a></td>
+    </tr>
+   
+  </tbody>
+</table>
+
+<!-- Button trigger modal -->
+
+
+
+          
+					
+				
+</div>
+
+    </div>
+</div>
 
 
 
@@ -43,29 +104,6 @@
 @include("admin.footer")
 </div>
 </div>
-<a class="scroll-to-top rounded" href="#page-top">
-        <i class="fas fa-angle-up"></i>
-    </a>
-
-    <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
-                </div>
-            </div>
-        </div>
-    </div>
 
 
 

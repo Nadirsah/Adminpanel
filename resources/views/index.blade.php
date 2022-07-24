@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="{{asset('portfolio_style/css/font-awesome.min.css')}}">
     <link rel="stylesheet" href="{{asset('portfolio_style/css/templatemo-style.css')}}">
 	<link href='//fonts.googleapis.com/css?family=Raleway:400,300,600,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <!-- 
 
 Ultra Profile
@@ -52,16 +53,20 @@ https://templatemo.com/tm-464-ultra-profile
 	<!-- END NAVIGATION -->
 
 	<!-- START HOME -->
-	<section id="home" class="templatemo-home">
+	<section id="home" class="templatemo-home" style="background-image:url('{{asset('/homeimage/'.$data->image)}}');">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-2 col-sm-1"></div>
+
+				
 				<div class="col-md-8 col-sm-10">
-					<h1 class="tm-home-title"><strong>John White</strong></h1>
-					<h2 class="tm-home-subtitle">Creative Director</h2>
-					<p>I am a professional <strong>UX Designer</strong> and <strong>Front-End Developer</strong> creating modern and responsive designs for <strong>Web</strong> and <strong>Mobile</strong>. Let us work together. Thank you.</p>
+					<h1 class="tm-home-title"><strong>{{$data->name}}</strong></h1>
+					<h2 class="tm-home-subtitle">{{$data->position}}</h2>
+					<p>{{$data->about}}</p>
 					<a href="#work" class="btn btn-default smoothScroll tm-view-more-btn">Let's Begin</a>
 				</div>
+
+				
 				<div class="col-md-2 col-sm-1"></div>
 			</div>
 		</div>
@@ -75,15 +80,19 @@ https://templatemo.com/tm-464-ultra-profile
 				<div class="col-md-offset-1 col-md-11">
 					<h2 class="title">My <strong>Work</strong></h2>						
 				</div>
+
+				@foreach($baza as $items)
 				<div class="col-md-4 col-sm-4">
 					<div class="work-wrapper">
 						<i class="fa fa-link"></i>
-						<h3 class="text-uppercase tm-work-h3">Mobile UX</h3>
+						<h3 class="text-uppercase tm-work-h3">{{$items->title}}</h3>
 						<hr>
-						<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet. Dolore magna.</p>
+						<p>{{$items->about}}</p>
 					</div>
 				</div>
-				<div class="col-md-4 col-sm-4">
+
+				@endforeach
+				<!-- <div class="col-md-4 col-sm-4">
 					<div class="work-wrapper">
 						<i class="fa fa-flash"></i>
 						<h3 class="text-uppercase tm-work-h3">Web Design</h3>
@@ -98,14 +107,14 @@ https://templatemo.com/tm-464-ultra-profile
 						<hr>
 						<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet. Dolore magna.</p>
 					</div>
-				</div>
+				</div> -->
 			</div>
 		</div>
 	</section>
 	<!-- END work -->
 
 	<!-- START PORTFOLIO -->
-	<section id="portfolio" class="tm-portfolio">
+	<section id="portfolio" class="tm-portfolio ">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12 wow bounce">
@@ -115,25 +124,28 @@ https://templatemo.com/tm-464-ultra-profile
 
 					<!-- START ISO SECTION -->
 					<div class="iso-section">
-						<ul class="filter-wrapper clearfix">
+						<!-- <ul class="filter-wrapper clearfix">
 							<li><a href="#" class="opc-main-bg selected" data-filter="*">All</a></li>
 							<li><a href="#" class="opc-main-bg" data-filter=".html">HTML</a></li>
 							<li><a href="#" class="opc-main-bg" data-filter=".photoshop">Photoshop</a></li>
 							<li><a href="#" class="opc-main-bg" data-filter=".wordpress">Wordpress</a></li>
 							<li><a href="#" class="opc-main-bg" data-filter=".mobile">Mobile</a></li>
-						</ul>
+						</ul> -->
 						<div class="iso-box-section">
+							
 							<div class="iso-box-wrapper col4-iso-box">
+							@foreach($item as $veri)
 								<div class="iso-box html photoshop wordpress mobile col-md-3 col-sm-3 col-xs-12">
 									<div class="portfolio-thumb">
-										<img src="images/portfolio-img1.jpg" class="fluid-img" alt="portfolio img">
-										<div class="portfolio-overlay">
-											<h3 class="portfolio-item-title">UX Design</h3>
-											<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonumm.</p>
+										<img src="url('{{asset('/portfolioimage/'.$veri->image)}}')"  alt="portfolio img">
+										<div class="">
+											<h3 class="portfolio-item-title">{{$veri->name}}</h3>
+											<p>{{$veri->about}}</p>
 										</div>
 									</div>
 								</div>
-								<div class="iso-box html wordpress mobile col-md-3 col-sm-3 col-xs-12">
+								@endforeach
+								<!-- <div class="iso-box html wordpress mobile col-md-3 col-sm-3 col-xs-12">
 									<div class="portfolio-thumb">
 										<img src="images/portfolio-img2.jpg" class="fluid-img" alt="portfolio img">
 										<div class="portfolio-overlay">
@@ -195,7 +207,7 @@ https://templatemo.com/tm-464-ultra-profile
 											<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonumm.</p>
 										</div>
 									</div>
-								</div>
+								</div> -->
 							</div>
 						</div>
 					</div>
@@ -211,28 +223,31 @@ https://templatemo.com/tm-464-ultra-profile
 			<div class="row">
 				<div class="col-md-6 col-sm-6">					
 					<h2 class="title">My <strong>Profile</strong></h2>
-					<p><span class="tm-info-label">Name</span> John White</p>
-					<p><span class="tm-info-label">Birthday</span> December 24, 1996</p>
-					<p><span class="tm-info-label">Address</span> Melbourne Victoria 3000 Australia</p>
-					<p><span class="tm-info-label">Phone</span> +001 020 0340 | 009 080 0760</p>
-					<p><span class="tm-info-label">Email</span> hello@company.com</p>
-					<p><span class="tm-info-label">Website</span> <a href="#" class="tm-red-text">www.company.com</a></p>
+					<p><span class="tm-info-label">Name</span> {{$mlmt->name}}</p>
+					<p><span class="tm-info-label">Birthday</span> {{$mlmt->birthday}}</p>
+					<p><span class="tm-info-label">Address</span> {{$mlmt->adres}}</p>
+					<p><span class="tm-info-label">Phone</span>{{$mlmt->phone}}</p>
+					<p><span class="tm-info-label">Email</span>{{$mlmt->email}}</p>
+					<p><span class="tm-info-label">Website</span> <a href="#" class="tm-red-text">{{$mlmt->website}}</a></p>
 				</div>
 				<div class="col-md-6 col-sm-6">
 					<h2 class="title"><strong>Some</strong> Skills</h2>
 					<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet. Dolore magna aliquam erat volutpat.</p>
-					<h4 class="tm-progress-label">Bootstrap <small class="progress-percent-small">100%</small></h4>
+					@foreach($langs as $lang)
+					<h4 class="tm-progress-label">{{$lang->about}} <small class="progress-percent-small">{{$lang->skill}}</small></h4>
 					<div class="progress tm-progress">
-						<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"></div>
+						<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="{{$lang->skill}}" aria-valuemin="0" aria-valuemax="100" style="width: {{$lang->skill}}%;"></div>
 					</div>
-					<h4 class="tm-progress-label">HTML5 <small class="progress-percent-small">90%</small></h4>
+					@endforeach
+					
+					<!-- <h4 class="tm-progress-label">HTML5 <small class="progress-percent-small">90%</small></h4>
 					<div class="progress tm-progress">
 						<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" style="width: 90%;"></div>
 					</div>
 					<h4 class="tm-progress-label">SEO <small class="progress-percent-small">80%</small></h4>
 					<div class="progress tm-progress">
 						<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%;"></div>
-					</div>
+					</div> -->
 				</div>
 			</div>
 		</div>
@@ -240,16 +255,16 @@ https://templatemo.com/tm-464-ultra-profile
 	<!-- END RESUME -->
 
 	<!-- START ABOUT -->
-	<section id="about" class="tm-about">
+	<section id="about" class="tm-about" style="background-image:url('{{asset('/aboutimage/'.$posi->image)}}');">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-offset-6 col-md-6 col-sm-offset-6 col-sm-7">
 					<div class="title">
 						<h2>This is <strong>me</strong></h2>
-						<h1 class="tm-red-text">Creative <strong>Director</strong></h1>
+						<h1 class="tm-red-text">{{$posi->position}}</strong></h1>
 					</div>
-					<p>This is free Bootstrap v3.3.4 mobile friendly layout from <a rel="nofollow" href="https://templatemo.com">templatemo</a>. Feel free to use it for your website. Credit goes to <a rel="nofollow" href="https://pixabay.com">Pixabay</a> for photos used in this template. Dolore magna aliquam erat volutpat. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet.</p>
-					<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet. Dolore magna aliquam erat volutpat.</p>
+					<p>{{$posi->about}}</p>
+					
 				</div>
 			</div>
 		</div>
@@ -261,40 +276,40 @@ https://templatemo.com/tm-464-ultra-profile
 		<div class="container">
 			<div class="row">
 				<div class="col-md-4 col-sm-4 wow rotateInUpLeft" data-wow-delay="0.3s">
-					<div class="media facebook">
-						<a href="#">
-							<div class="media-object pull-left">
-								<i class="fa fa-facebook"></i>
+					<div class="media facebook ">
+						<a href="https://www.linkedin.com/in/nadirsah-isayev-1ba7b11a9">
+							<div class="media-object pull-left " style="margin-right:15px">
+							<i class="fa-brands fa-linkedin " style="font-size:50px"></i>
 							</div>
 							<div class="media-body">
 								<h4 class="media-heading tm-social-title">Follow me on</h4>
-								<h3>Social Facebook</h3>
+								<h3>Social linkedin</h3>
 							</div>
 						</a>
 					</div>
 				</div>
 				<div class="col-md-4 col-sm-4 wow rotateInUpLeft" data-wow-delay="0.6s">
 					<div class="media twitter">
-						<a href="#">
-							<div class="media-object pull-left">
-								<i class="fa fa-twitter"></i>
+						<a href="https://github.com/Nadirsah">
+							<div class="media-object pull-left" style="margin-right:15px">
+							<i class="fa-brands fa-github-square" style="font-size:50px"></i>
 							</div>
 							<div class="media-body">
 								<h4 class="media-heading tm-social-title">Tweet me on</h4>
-								<h3>Social Twitter</h3>
+								<h3>Social github</h3>
 							</div>
 						</a>
 					</div>
 				</div>
 				<div class="col-md-4 col-sm-4 wow rotateInUpLeft" data-wow-delay="0.9s">
 					<div class="media pinterest">
-						<a href="#">
-							<div class="media-object pull-left">
-								<i class="fa fa-pinterest"></i>
+						<a href="https://mail.google.com">
+							<div class="media-object pull-left" style="margin-right:15px">
+							<i class="fa-solid fa-at" style="font-size:50px"></i>
 							</div>
 							<div class="media-body">
 								<h4 class="media-heading tm-social-title">Pin me on</h4>
-								<h3>Social Pinterest</h3>
+								<h3>Social Gmail</h3>
 							</div>
 						</a>
 					</div>
@@ -338,6 +353,7 @@ https://templatemo.com/tm-464-ultra-profile
 			</div>
 		</div>
 	</section>
+	
 	<!-- END CONTACT -->
 	<script src="{{asset('portfolio_style/js/jquery.js')}}"></script>
     <script src="{{asset('portfolio_style/js/bootstrap.min.js')}}"></script>

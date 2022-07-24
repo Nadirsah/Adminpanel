@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <title>SB Admin 2 - Dashboard</title>
 
     <!-- Custom fonts for this template-->
@@ -21,62 +21,36 @@
     <link href="{{asset('front_style/css/sb-admin-2.min.css')}}" rel="stylesheet">
 
 </head>
+<body>
+<form action="{{route('UpHomes')}}" method="post" enctype="multipart/form-data">
+    @csrf
 
-<body id="page-top">
-
-<div id="wrapper">
-
-@include("admin.sidebar")
-
-<div id="content-wrapper" class="d-flex flex-column">
-
-<div id="content">
-@include("admin.header")
-
-@include("admin.content")
-
-
-
-
-</div>
-
-@include("admin.footer")
-</div>
-</div>
-<a class="scroll-to-top rounded" href="#page-top">
-        <i class="fas fa-angle-up"></i>
-    </a>
-
-    <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
-                </div>
-            </div>
-        </div>
-    </div>
+    <input type="hidden" name="id" value="{{$data['id']}}">
+<div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Ad</label>
+    <input type="text" name="name" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{$data['name']}}">
+   
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Vezife</label>
+    <input type="text" name="position" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{$data['position']}}">
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Tesvir</label>
+    <input type="file" name="image" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{$data['image']}}">
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Haqqinda</label>
+    <input type="text" name="about" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{$data['about']}}">
+  </div>
+  <button type="submit" class="btn btn-primary text-danger">Yenile</button>
 
 
 
 
-
-
-
-
-
-    <!-- Bootstrap core JavaScript-->
-    <script src="{{asset('front_style/vendor/jquery/jquery.min.js')}}"></script>
+</form>
+ <!-- Bootstrap core JavaScript-->
+ <script src="{{asset('front_style/vendor/jquery/jquery.min.js')}}"></script>
     <script src="{{asset('front_style/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
    
 
