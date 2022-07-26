@@ -29,9 +29,9 @@ Route::middleware([
     })->name('dashboard');
 });
 
-//Route::get("/home",[AdminController::class,"index"]);
+Route::get("/home",[AdminController::class,"index"])->name("admin");
 
-Route::get("/redirects",[AdminController::class,"redirect"])->name("admin");
+Route::get("/redirects",[AdminController::class,"redirect"]);
 
 Route::get("/",[IndexController::class,"port"])->name("mainpage");
 

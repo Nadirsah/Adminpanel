@@ -49,6 +49,16 @@
     <label for="exampleInputEmail1" class="form-label">Haqqinda</label>
     <input type="text" name="about" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
   </div>
+
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Website</label>
+    <input type="text" name="site" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+  </div>
+
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">tesvir</label>
+    <input type="file" name="image" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+  </div>
   <button type="submit" class="btn btn-primary text-danger">Gonder</button>
 
 
@@ -63,6 +73,8 @@
     <tr>
       <th scope="col">Basliq</th>
       <th scope="col">Haqqinda</th>
+      <th scope="col">Website</th>
+      <th scope="col">Tesvir</th>
       <th scope="col">Duzelis et</th>
     </tr>
   </thead>
@@ -71,6 +83,8 @@
     <tr>
       <th>{{$item->title}}</th>
       <td>{{$item->about}}</td>
+      <td>{{$item->site}}</td>
+      <td>{{$item->image}}</td>
       <td><a href="{{'Editmywork/'.$item['id']}}" class="btn btn-info"><i class="fa-solid fa-pen-to-square"></i></a></td>
       <td><a href="{{'deletemywork/'.$item['id']}}" class="btn btn-danger"><i class="fa-solid fa-trash"></i></a></td>
     </tr>

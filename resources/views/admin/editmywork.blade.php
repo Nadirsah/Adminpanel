@@ -36,6 +36,14 @@
     <label for="exampleInputEmail1" class="form-label">Haqqinda</label>
     <input type="text" name="about" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{$data['about']}}">
   </div>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Website</label>
+    <input type="text" name="site" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{$data['site']}}">
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Website</label>
+    <input type="file" name="image" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" value="{{$data['image']}}">
+  </div>
   <button type="submit" class="btn btn-primary text-danger">Yenile</button>
 
 

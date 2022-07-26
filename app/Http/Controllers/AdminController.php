@@ -24,21 +24,21 @@ class AdminController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    // public function index()
-    // {
-    //     return view("home");
-    // }
+    public function index()
+    {
+        return view("home");
+    }
 
     public function redirect(){
-return view('admin.adminhome');
-    //    $usertype=Auth::user()->usertype;
+//return view('admin.adminhome');
+       $usertype=Auth::user()->usertype;
 
-    //    if($usertype=="1"){
-    //     return view("admin.adminhome");
-    //    }
-    //    else{
-    //     return view("home");
-    //    }
+       if($usertype=="1"){
+        return view("admin.adminhome");
+       }
+       else{
+        return view("home");
+       }
     }
 //home
     public function homes(){
@@ -83,14 +83,23 @@ return redirect("homes");
 
 //my work
     public function mywork(){
+
+        
+
         $data=Mywork::all();
         return view("admin.mywork",compact("data"));
     }
     public function storemywork(Request $request)
     {
+        $image=$request->image;
+        $imagename=time().".".$image->getClientOriginalExtension();
+        $request->image->move("workimage",$imagename);
+        
        $data=new Mywork; 
+ $data->image=$imagename;
 $data->title=$request->title;
 $data->about=$request->about;
+$data->site=$request->site;
 $data->save();
 return redirect()->back();
     }
@@ -103,9 +112,15 @@ return redirect()->back();
 
     public function updatemywork(Request $request)
     {
+        $image=$request->image;
+        $imagename=time().".".$image->getClientOriginalExtension();
+        $request->image->move("workimage",$imagename);
+
         $data=Mywork::find($request->id);
+        $data->image=$imagename;       
 $data->title=$request->title;
 $data->about=$request->about;
+$data->site=$request->site;
 $data->save();
 return redirect("mywork");
     }

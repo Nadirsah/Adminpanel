@@ -7,7 +7,8 @@
 	<meta name="keywords" content="">
 	<meta name="description" content="">
 	<!-- SITE TITLE -->
-	<title>Ultra Profile HTML5 Template</title>
+	<title>Isayev Nadirsah</title>
+	<link rel="shortcut icon" href="{{asset('front_style/img/1154.jpg')}}" type="image/x-icon">
 
 	<!-- STYLESHEETS -->
 	<link rel="stylesheet" href="{{asset('portfolio_style/css/bootstrap.min.css')}}">
@@ -38,12 +39,12 @@ https://templatemo.com/tm-464-ultra-profile
 			</div>
 			<nav class="collapse navbar-collapse" id="rock-navigation">
 				<ul class="nav navbar-nav navbar-right main-navigation text-uppercase">
-					<li><a href="#home" class="smoothScroll">Home</a></li>
-					<li><a href="#work" class="smoothScroll">My Work</a></li>
+					<li><a href="#home" class="smoothScroll">Əsas</a></li>
+					<li><a href="#work" class="smoothScroll">İşlərim</a></li>
 					<li><a href="#portfolio" class="smoothScroll">Portfolio</a></li>
-					<li><a href="#resume" class="smoothScroll">Resume</a></li>
-					<li><a href="#about" class="smoothScroll">About</a></li>
-					<li><a href="#contact" class="smoothScroll">Contact</a></li>
+					<li><a href="#resume" class="smoothScroll">Bacarıqlar</a></li>
+					<li><a href="#about" class="smoothScroll">Haqqinda</a></li>
+					<li><a href="#contact" class="smoothScroll">Əlaqə</a></li>
                     <li><a href="{{route('admin')}}" class="smoothScroll">Admin</a></li>
 				</ul>
 			</nav>
@@ -63,7 +64,7 @@ https://templatemo.com/tm-464-ultra-profile
 					<h1 class="tm-home-title"><strong>{{$data->name}}</strong></h1>
 					<h2 class="tm-home-subtitle">{{$data->position}}</h2>
 					<p>{{$data->about}}</p>
-					<a href="#work" class="btn btn-default smoothScroll tm-view-more-btn">Let's Begin</a>
+					<a href="#work" class="btn btn-default smoothScroll tm-view-more-btn">Başlayaq</a>
 				</div>
 
 				
@@ -74,17 +75,17 @@ https://templatemo.com/tm-464-ultra-profile
 	<!-- END HOME -->
 
 	<!-- START work -->
-	<section id="work" class="tm-padding-top-bottom-100">
+	<section id="work" class="tm-padding-top-bottom-100" >
 		<div class="container">
 			<div class="row">
 				<div class="col-md-offset-1 col-md-11">
-					<h2 class="title">My <strong>Work</strong></h2>						
+					<h2 class="title"><strong>İşlərim</strong></h2>						
 				</div>
 
 				@foreach($baza as $items)
-				<div class="col-md-4 col-sm-4">
-					<div class="work-wrapper">
-						<i class="fa fa-link"></i>
+				<div class="col-md-4 col-sm-4" >
+					<div class="work-wrapper" style="background-image:url('{{asset('/workimage/'.$items->image)}}');">
+						<a href="{{$items->site}}"><i class="fa fa-link"></i></a>
 						<h3 class="text-uppercase tm-work-h3">{{$items->title}}</h3>
 						<hr>
 						<p>{{$items->about}}</p>
@@ -222,7 +223,7 @@ https://templatemo.com/tm-464-ultra-profile
 		<div class="container">
 			<div class="row">
 				<div class="col-md-6 col-sm-6">					
-					<h2 class="title">My <strong>Profile</strong></h2>
+					<h2 class="title"> <strong>Məlumatlarım</strong></h2>
 					<p><span class="tm-info-label">Name</span> {{$mlmt->name}}</p>
 					<p><span class="tm-info-label">Birthday</span> {{$mlmt->birthday}}</p>
 					<p><span class="tm-info-label">Address</span> {{$mlmt->adres}}</p>
@@ -231,7 +232,7 @@ https://templatemo.com/tm-464-ultra-profile
 					<p><span class="tm-info-label">Website</span> <a href="#" class="tm-red-text">{{$mlmt->website}}</a></p>
 				</div>
 				<div class="col-md-6 col-sm-6">
-					<h2 class="title"><strong>Some</strong> Skills</h2>
+					<h2 class="title"><strong></strong>Bacarıqlar</h2>
 					<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet. Dolore magna aliquam erat volutpat.</p>
 					@foreach($langs as $lang)
 					<h4 class="tm-progress-label">{{$lang->about}} <small class="progress-percent-small">{{$lang->skill}}</small></h4>
@@ -331,25 +332,25 @@ https://templatemo.com/tm-464-ultra-profile
 				<div class="col-md-10 col-sm-10">
 					<form action="#" method="post">
 						<div class="col-md-6 col-sm-6">
-							<input class="form-control" type="text" placeholder="Your Name">
+							<input class="form-control" type="text" placeholder="Adınız">
 						</div>
 						<div class="col-md-6 col-sm-6">
-							<input class="form-control" type="email" placeholder="Your Email">
+							<input class="form-control" type="email" placeholder="Email adresiniz">
 						</div>
 						<div class="col-md-12 col-sm-12">
-							<input class="form-control" type="text" placeholder="Your Subject">
-							<textarea class="form-control" placeholder="Your Message" rows="6"></textarea>
+							<input class="form-control" type="text" placeholder="Movzu">
+							<textarea class="form-control" placeholder="Mesajınız" rows="6"></textarea>
 						</div>
 						<div class="col-md-offset-2 col-md-8 col-sm-offset-2 col-sm-8">
-							<input class="form-control" type="submit" value="SHOOT MESSAGE">
+							<input class="form-control" type="submit" value="Gondər">
 						</div>
 					</form>
 				</div>
-				<div class="col-md-1 col-sm-1"></div>
+				<!-- <div class="col-md-1 col-sm-1"></div>
 				<div class="col-md-12 col-sm-12">
 					<p>Copyright &copy; 2018 Ultra Profile
                     . design: <a rel="nofollow noopener" href="https://templatemo.com">template mo</a></p>
-				</div>
+				</div> -->
 			</div>
 		</div>
 	</section>
