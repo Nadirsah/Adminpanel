@@ -15,9 +15,9 @@ return new class extends Migration
     {
         Schema::create('myworks', function (Blueprint $table) {
             $table->id();
-            $table->string("title");
-            $table->string("about");
-            $table->string("site");
+            $table->string('title');
+            $table->string('about');
+            $table->string('site');
             $table->timestamps();
         });
     }

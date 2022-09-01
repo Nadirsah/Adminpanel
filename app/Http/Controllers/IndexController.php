@@ -2,15 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Models\About;
 use App\Models\Home;
 use App\Models\Mywork;
 use App\Models\Portfoliosec;
 use App\Models\Profil;
 use App\Models\Skill;
-use App\Models\About;
-
-
+use Illuminate\Http\Request;
 
 class IndexController extends Controller
 {
@@ -21,13 +19,14 @@ class IndexController extends Controller
      */
     public function port()
     {
-        $data=Home::where("id",1)->first();
-        $baza=Mywork::all();
-        $item=Portfoliosec::all();
-        $mlmt=Profil::where("id",1)->first();
-        $langs=Skill::all();
-        $posi=About::where("id",1)->first();
-        return view("index",compact("data","baza","item","mlmt","langs","posi"));
+        $data = Home::where('id', 1)->first();
+        $baza = Mywork::all();
+        $item = Portfoliosec::all();
+        $mlmt = Profil::where('id', 1)->first();
+        $langs = Skill::all();
+        $posi = About::where('id', 1)->first();
+
+        return view('index', compact('data', 'baza', 'item', 'mlmt', 'langs', 'posi'));
     }
 
     /**

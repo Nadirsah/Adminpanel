@@ -15,9 +15,9 @@ return new class extends Migration
     {
         Schema::create('portfoliosecs', function (Blueprint $table) {
             $table->id();
-            $table->string("name");
-            $table->string("image");
-            $table->string("about");
+            $table->string('name');
+            $table->string('image');
+            $table->string('about');
             $table->timestamps();
         });
     }
