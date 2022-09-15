@@ -274,7 +274,7 @@ class AdminController extends Controller
 
         $data->save();
 
-        return redirect('homes');
+        return redirect()->back();
     }
 
     public function destroyskill($id)

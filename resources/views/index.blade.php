@@ -35,13 +35,13 @@ https://templatemo.com/tm-464-ultra-profile
 					<span class="icon icon-bar"></span>
 					<span class="icon icon-bar"></span>
 				</button>
-				<a href="#" class="navbar-brand">Ultra Profile</a>
+				<a href="#" class="navbar-brand">İsayev Nadirşah</a>
 			</div>
 			<nav class="collapse navbar-collapse" id="rock-navigation">
 				<ul class="nav navbar-nav navbar-right main-navigation text-uppercase">
 					<li><a href="#home" class="smoothScroll">Əsas</a></li>
 					<li><a href="#work" class="smoothScroll">İşlərim</a></li>
-					<li><a href="#portfolio" class="smoothScroll">Portfolio</a></li>
+					<!-- <li><a href="#portfolio" class="smoothScroll">Məlumatlarım</a></li> -->
 					<li><a href="#resume" class="smoothScroll">Bacarıqlar</a></li>
 					<li><a href="#about" class="smoothScroll">Haqqinda</a></li>
 					<li><a href="#contact" class="smoothScroll">Əlaqə</a></li>
@@ -63,7 +63,7 @@ https://templatemo.com/tm-464-ultra-profile
 				<div class="col-md-8 col-sm-10">
 					<h1 class="tm-home-title"><strong>{{$data->name}}</strong></h1>
 					<h2 class="tm-home-subtitle">{{$data->position}}</h2>
-					<p>{{$data->about}}</p>
+					<p class="h2 text-danger">{{$data->about}}</p>
 					<a href="#work" class="btn btn-default smoothScroll tm-view-more-btn">Başlayaq</a>
 				</div>
 
@@ -79,7 +79,7 @@ https://templatemo.com/tm-464-ultra-profile
 		<div class="container">
 			<div class="row">
 				<div class="col-md-offset-1 col-md-11">
-					<h2 class="title"><strong>İşlərim</strong></h2>						
+					<p class="title"><strong>İşlərim</strong></p>						
 				</div>
 
 				@foreach($baza as $items)
@@ -93,29 +93,14 @@ https://templatemo.com/tm-464-ultra-profile
 				</div>
 
 				@endforeach
-				<!-- <div class="col-md-4 col-sm-4">
-					<div class="work-wrapper">
-						<i class="fa fa-flash"></i>
-						<h3 class="text-uppercase tm-work-h3">Web Design</h3>
-						<hr>
-						<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet. Dolore magna.</p>
-					</div>
-				</div>
-				<div class="col-md-4 col-sm-4">
-					<div class="work-wrapper">
-						<i class="fa fa-dashboard"></i>
-						<h3 class="text-uppercase tm-work-h3">HTML Templates</h3>
-						<hr>
-						<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet. Dolore magna.</p>
-					</div>
-				</div> -->
+				
 			</div>
 		</div>
 	</section>
 	<!-- END work -->
 
 	<!-- START PORTFOLIO -->
-	<section id="portfolio" class="tm-portfolio ">
+	<!-- <section id="portfolio" class="tm-portfolio ">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12 wow bounce">
@@ -123,20 +108,14 @@ https://templatemo.com/tm-464-ultra-profile
 						<h2 class="tm-portfolio-title">My <strong>Portfolio</strong></h2>
 					</div>
 
-					<!-- START ISO SECTION -->
+					START ISO SECTION
 					<div class="iso-section">
-						<!-- <ul class="filter-wrapper clearfix">
-							<li><a href="#" class="opc-main-bg selected" data-filter="*">All</a></li>
-							<li><a href="#" class="opc-main-bg" data-filter=".html">HTML</a></li>
-							<li><a href="#" class="opc-main-bg" data-filter=".photoshop">Photoshop</a></li>
-							<li><a href="#" class="opc-main-bg" data-filter=".wordpress">Wordpress</a></li>
-							<li><a href="#" class="opc-main-bg" data-filter=".mobile">Mobile</a></li>
-						</ul> -->
+						
 						<div class="iso-box-section">
 							
-							<div class="iso-box-wrapper col4-iso-box">
+							<div class="iso-box-wrapper col-4-iso-box">
 							@foreach($item as $veri)
-								<div class="iso-box html photoshop wordpress mobile col-md-3 col-sm-3 col-xs-12">
+								<div class="iso-box html photoshop wordpress mobile col-md-6 col-sm-6 col-xs-12 ">
 									<div class="portfolio-thumb">
 										<img src="url('{{asset('/portfolioimage/'.$veri->image)}}')"  alt="portfolio img">
 										<div class="">
@@ -146,76 +125,14 @@ https://templatemo.com/tm-464-ultra-profile
 									</div>
 								</div>
 								@endforeach
-								<!-- <div class="iso-box html wordpress mobile col-md-3 col-sm-3 col-xs-12">
-									<div class="portfolio-thumb">
-										<img src="images/portfolio-img2.jpg" class="fluid-img" alt="portfolio img">
-										<div class="portfolio-overlay">
-											<h3 class="portfolio-item-title">UX Design</h3>
-											<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonumm.</p>
-										</div>
-									</div>
-								</div>
-								<div class="iso-box wordpress col-md-3 col-sm-3 col-xs-12">
-									<div class="portfolio-thumb">
-										<img src="images/portfolio-img3.jpg" class="fluid-img" alt="portfolio img">
-										<div class="portfolio-overlay">
-											<h3 class="portfolio-item-title">UX Design</h3>
-											<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonumm.</p>
-										</div>
-									</div>
-								</div>
-								<div class="iso-box html mobile col-md-3 col-sm-3 col-xs-12">
-									<div class="portfolio-thumb">
-										<img src="images/portfolio-img4.jpg" class="fluid-img" alt="portfolio img">
-										<div class="portfolio-overlay">
-											<h3 class="portfolio-item-title">UX Design</h3>
-											<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonumm.</p>
-										</div>
-									</div>
-								</div>
-								<div class="iso-box wordpress col-md-3 col-sm-3 col-xs-12">
-									<div class="portfolio-thumb">
-										<img src="images/portfolio-img5.jpg" class="fluid-img" alt="portfolio img">
-										<div class="portfolio-overlay">
-											<h3 class="portfolio-item-title">UX Design</h3>
-											<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonumm.</p>
-										</div>
-									</div>
-								</div>
-								<div class="iso-box html photoshop col-md-3 col-sm-3 col-xs-12">
-									<div class="portfolio-thumb">
-										<img src="images/portfolio-img6.jpg" class="fluid-img" alt="portfolio img">
-										<div class="portfolio-overlay">
-											<h3 class="portfolio-item-title">UX Design</h3>
-											<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonumm.</p>
-										</div>
-									</div>
-								</div>
-								<div class="iso-box photoshop col-md-3 col-sm-3 col-xs-12">
-									<div class="portfolio-thumb">
-										<img src="images/portfolio-img7.jpg" class="fluid-img" alt="portfolio img">
-										<div class="portfolio-overlay">
-											<h3 class="portfolio-item-title">UX Design</h3>
-											<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonumm.</p>
-										</div>
-									</div>
-								</div>
-								<div class="iso-box wordpress col-md-3 col-sm-3 col-xs-12">
-									<div class="portfolio-thumb">
-										<img src="images/portfolio-img8.jpg" class="fluid-img" alt="portfolio img">
-										<div class="portfolio-overlay">
-											<h3 class="portfolio-item-title">UX Design</h3>
-											<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonumm.</p>
-										</div>
-									</div>
-								</div> -->
+								
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</section>
+	</section> -->
 	<!-- END PORTFOLIO -->
 
 	<!-- START RESUME -->
@@ -233,7 +150,7 @@ https://templatemo.com/tm-464-ultra-profile
 				</div>
 				<div class="col-md-6 col-sm-6">
 					<h2 class="title"><strong></strong>Bacarıqlar</h2>
-					<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet. Dolore magna aliquam erat volutpat.</p>
+					
 					@foreach($langs as $lang)
 					<h4 class="tm-progress-label">{{$lang->about}} <small class="progress-percent-small">{{$lang->skill}}</small></h4>
 					<div class="progress tm-progress">
@@ -256,20 +173,20 @@ https://templatemo.com/tm-464-ultra-profile
 	<!-- END RESUME -->
 
 	<!-- START ABOUT -->
-	<section id="about" class="tm-about" style="background-image:url('{{asset('/aboutimage/'.$posi->image)}}');">
+	<!-- <section id="about" class="tm-about" style="background-image:url('{{asset('/aboutimage/'.$posi->image)}}');">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-offset-6 col-md-6 col-sm-offset-6 col-sm-7">
 					<div class="title">
-						<h2>This is <strong>me</strong></h2>
+						
 						<h1 class="tm-red-text">{{$posi->position}}</strong></h1>
 					</div>
-					<p>{{$posi->about}}</p>
+					<h3>{{$posi->about}}</h3>
 					
 				</div>
 			</div>
 		</div>
-	</section>
+	</section> -->
 	<!-- END ABOUT -->
 
 	<!-- START SOCIAL -->
@@ -283,8 +200,8 @@ https://templatemo.com/tm-464-ultra-profile
 							<i class="fa-brands fa-linkedin " style="font-size:50px"></i>
 							</div>
 							<div class="media-body">
-								<h4 class="media-heading tm-social-title">Follow me on</h4>
-								<h3>Social linkedin</h3>
+								
+								<h3>Linkedin </h3> <h5>unvanim</h5>
 							</div>
 						</a>
 					</div>
@@ -296,8 +213,8 @@ https://templatemo.com/tm-464-ultra-profile
 							<i class="fa-brands fa-github-square" style="font-size:50px"></i>
 							</div>
 							<div class="media-body">
-								<h4 class="media-heading tm-social-title">Tweet me on</h4>
-								<h3>Social github</h3>
+								
+								<h3>Github </h3> <h5>unvanim</h5>
 							</div>
 						</a>
 					</div>
@@ -309,8 +226,8 @@ https://templatemo.com/tm-464-ultra-profile
 							<i class="fa-solid fa-at" style="font-size:50px"></i>
 							</div>
 							<div class="media-body">
-								<h4 class="media-heading tm-social-title">Pin me on</h4>
-								<h3>Social Gmail</h3>
+								
+								<h3>Gmail </h3><h5>unvanim</h5>
 							</div>
 						</a>
 					</div>
@@ -321,7 +238,7 @@ https://templatemo.com/tm-464-ultra-profile
 	<!-- END SOCIAL -->
 
 	<!-- START CONTACT -->
-	<section id="contact" class="tm-contact">
+	<!-- <section id="contact" class="tm-contact">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">					
@@ -346,14 +263,14 @@ https://templatemo.com/tm-464-ultra-profile
 						</div>
 					</form>
 				</div>
-				<!-- <div class="col-md-1 col-sm-1"></div>
+				 <div class="col-md-1 col-sm-1"></div>
 				<div class="col-md-12 col-sm-12">
 					<p>Copyright &copy; 2018 Ultra Profile
                     . design: <a rel="nofollow noopener" href="https://templatemo.com">template mo</a></p>
-				</div> -->
+				</div> 
 			</div>
 		</div>
-	</section>
+	</section> -->
 	
 	<!-- END CONTACT -->
 	<script src="{{asset('portfolio_style/js/jquery.js')}}"></script>
